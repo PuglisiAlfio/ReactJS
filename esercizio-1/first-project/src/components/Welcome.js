@@ -1,5 +1,7 @@
 function Welcome(props){
-    return <p>Welcome {props.name}!</p>
+    return <div>
+             <p>Welcome <strong>{props.name}</strong>!</p>
+            </div>
 }
 
 export default Welcome
