@@ -1,6 +1,7 @@
 function Welcome(props){
+    let strongProp = <strong>{props.name}</strong>
     return <div>
-             <p>Welcome <strong>{props.name}</strong>!</p>
+             <p>Welcome {strongProp}!</p>
             </div>
 }
 
