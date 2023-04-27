@@ -1,6 +1,5 @@
 export default function Welcome(props){
-    let strongProp = <strong>{props.name}</strong>
     return <div>
-             <p>Welcome {strongProp}!</p>
+             <p>Welcome {props.name}!</p>
             </div>
 }
