@@ -6,7 +6,7 @@ export default class Counter extends React.Component {
         count : 0
     }
 
-    constructor(props){
+    constructor(props) {
         super(props) 
 
         setInterval(() => {
