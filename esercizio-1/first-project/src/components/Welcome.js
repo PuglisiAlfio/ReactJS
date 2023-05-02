@@ -1,5 +1,5 @@
 function Welcome(props){
-    return <p>Welcome {props.name}!</p>
+    return <h2>Welcome {props.name}!</h2>
 }
 
 export default Welcome
