@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
- const ClickCounter = () => {
+ const ClickTarget = () => {
     const [clickTarget, setClickTarget] = useState();
 
         const click = (event) => {
@@ -15,4 +15,4 @@ import React, {useState} from 'react';
         </>
 }
 
-export default ClickCounter;
+export default ClickTarget;
