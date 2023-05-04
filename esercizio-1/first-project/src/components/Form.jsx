@@ -6,18 +6,18 @@ const Form = () => {
   const [name, setName] = useState("");
   const [pass, setPass] = useState("");
 
-  const autoComplete = (e) => {
-    setName({ name: e.target.value });
+  const setNameHandler = (event) => {
+    setName({ name: event.target.value });
   };
 
-  const autoComplete2 = (e) => {
-    setPass({ pass: e.target.value });
+  const setPassHandler = (event) => {
+    setPass({ pass: event.target.value });
   };
 
   return (
     <form>
-      <input type="text" onChange={autoComplete} />
-      <input type="password" onChange={autoComplete2} />
+      <input type="text" onChange={setNameHandler} />
+      <input type="password" onChange={setPassHandler} />
       <Login text={name} pass={pass} />
     </form>
   );
