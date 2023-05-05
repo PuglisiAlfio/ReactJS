@@ -11,13 +11,11 @@ const Login = (props) => {
     console.log(values)
     }
 
-    const resetContent = () => {
-        let values = {
-            name: '',
-            lastName: '',
-            password: '',
-        }
-        return values
+    const resetContent = (event) => {
+        event.preventDefault();
+        props.emptyName.current.value = '';
+        props.emptyLastName.current.value = '';
+        props.emptyPass.current.value = '';
     }
 
     
