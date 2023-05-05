@@ -1,9 +1,9 @@
-import Welcome from './components/Welcome';
+import UncontrolledLogin from './components/UncontrolledLogin';
 import './App.css';
 
 function App() {
   return <div>
-          <Welcome name = "Alfio"/>
+          <UncontrolledLogin/>
         </div>
 }
 
