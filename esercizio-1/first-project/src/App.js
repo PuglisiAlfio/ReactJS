@@ -1,9 +1,14 @@
-import Welcome from './components/Welcome';
+import TodoList from './components/TodoList';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+
+  const arrNames = ['Alfio', 'Andrea', 'Manfredi'];
+
+  const [currentList, setCurrentList] = useState(arrNames)
   return <div>
-          <Welcome name = "Alfio"/>
+          <TodoList name = {currentList} setList = {setCurrentList}/>
         </div>
 }
 
