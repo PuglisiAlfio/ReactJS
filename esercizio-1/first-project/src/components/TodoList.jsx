@@ -23,23 +23,27 @@ const TodoList = (props) => {
         setItem([...reset])
         clearList.current = []
       }
-      //proviamo a rimuovere ogni singolo elemento
-      const setRemoveItemHandler = () =>{
-        const newArr = [...item];
-        console.log(newArr.splice(1,1));
-        
+      //rimuovere elemento corrispondente
+      const setRemoveItemHandler = (id) => {
+        const updateItems = [...item];
+        updateItems.splice(id, 1);
+        setItem(updateItems)
       }
     
     return(
         <>
             <h3>Todo List</h3>
             <input onChange={(event) => setName(event.target.value)} ref={clearInput}/>
+
             <button type="button" onClick={setNameHandler}>Add Item</button>
+
             <button type="button" onClick={setResetHandler}>Reset List</button>
+
             <ul ref={clearList} onChange={(event) => setReset(event.target.value)}>
-                {item.map((item, index) => <>
-                                            <li key={index}>{item}</li>
-                                            <button type='reset' onClick={setRemoveItemHandler}>Rimuovi item</button>
+
+                {item.map((item, id) => <>
+                                            <li key={id}>{item}</li>
+                                            <button onClick={setRemoveItemHandler}>Rimuovi item</button>
                                             </>)}
             </ul>
         </>
