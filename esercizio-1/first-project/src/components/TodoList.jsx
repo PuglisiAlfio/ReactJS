@@ -42,8 +42,8 @@ const TodoList = (props) => {
             <ul ref={clearList} onChange={(event) => setReset(event.target.value)}>
 
                 {item.map((item, id) => <>
-                                            <li key={id}>{item}</li>
-                                            <button onClick={setRemoveItemHandler}>Rimuovi item</button>
+                                            <li key={id} index={id}>{item}</li>
+                                            <button onClick={() => {setRemoveItemHandler(id)}}>Rimuovi item</button>
                                             </>)}
             </ul>
         </>
