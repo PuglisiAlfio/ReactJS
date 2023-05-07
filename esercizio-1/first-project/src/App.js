@@ -1,9 +1,14 @@
-import Welcome from './components/Welcome';
+import TodoList from './components/TodoList';
 import './App.css';
 
 function App() {
+
+  const arrNames = ['Alfio', 'Andrea', 'Manfredi'];
+
   return <div>
-          <Welcome name = "Alfio"/>
+          <TodoList name = {arrNames}>
+
+            </TodoList>
         </div>
 }
 
