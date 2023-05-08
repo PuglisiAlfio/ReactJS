@@ -8,7 +8,7 @@ const arrNames = ['Alfio', 'Andrea', 'Manfredi'];
 class DisplayLanguage extends React.Component {
 
     state = {
-        language: 'en',
+        language: 'italiano',
     }
 
     handleLanguageChange= (event) => {
@@ -17,15 +17,15 @@ class DisplayLanguage extends React.Component {
         }) 
     }
 
-
     render() {
         return <>
                 <h3>My Display Language</h3>
                 <select value={this.state.language} onChange={this.handleLanguageChange}>
-                    <option value="en">ENGLISH</option>
-                    <option value="it">ITALIANO</option>
+                    <option value="english">ENGLISH</option>
+                    <option value="italiano">ITALIANO</option>
                 </select>
                 <LanguageContext.Provider value={this.state.language}>
+                    <h1>{this.state.language}</h1>
                     <TodoList name = {arrNames}/>
                 </LanguageContext.Provider>
                 </>

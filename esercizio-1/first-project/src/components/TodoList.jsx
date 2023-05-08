@@ -2,18 +2,18 @@ import { useState, useRef } from "react";
 import LanguageContext from "./LanguageContext";
 
 const String = {
-    en:{CURRENT_LIST: 'Todo List'},
-    it:{CURRENT_LIST: 'Lista di cose da fare'}
+    english:{CURRENT_LIST: 'Todo List'},
+    italiano:{CURRENT_LIST: 'Lista di cose da fare'}
 }
 
 const StringButton = {
-    en:{CURRENT_BUTTON: 'Add item'},
-    it:{CURRENT_BUTTON: 'Aggiungi elemento'}
+    english:{CURRENT_BUTTON: 'Add item'},
+    italiano:{CURRENT_BUTTON: 'Aggiungi elemento'}
 }
 
 const RemoveList = {
-    en:{CURRENT_BUTTON: 'Delete item'},
-    it:{CURRENT_BUTTON: 'Resetta Lista'}
+    english:{CURRENT_BUTTON: 'Delete item'},
+    italiano:{CURRENT_BUTTON: 'Resetta Lista'}
 }
 
 const TodoList = (props) => {
@@ -51,7 +51,7 @@ const TodoList = (props) => {
 
                 {language => {
                     return(<>
-
+                        <h1>{props.value}</h1>
                         <h3>{String[language].CURRENT_LIST}</h3>
                         <input onChange={(event) => setName(event.target.value)} ref={clearInput}/>
 
