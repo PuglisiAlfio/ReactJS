@@ -1,9 +1,9 @@
-import Welcome from './components/Welcome';
+import DisplayLanguage from './components/DisplayLanguage';
 import './App.css';
 
 function App() {
   return <div>
-          <Welcome name = "Alfio"/>
+          <DisplayLanguage/>
         </div>
 }
 
