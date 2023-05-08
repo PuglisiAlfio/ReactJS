@@ -51,7 +51,6 @@ const TodoList = (props) => {
 
                 {language => {
                     return(<>
-                        <h1>{props.value}</h1>
                         <h3>{String[language].CURRENT_LIST}</h3>
                         <input onChange={(event) => setName(event.target.value)} ref={clearInput}/>
 
