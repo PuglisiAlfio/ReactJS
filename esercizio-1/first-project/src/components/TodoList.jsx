@@ -6,6 +6,16 @@ const String = {
     it:{CURRENT_LIST: 'Lista di cose da fare'}
 }
 
+const StringButton = {
+    en:{CURRENT_BUTTON: 'Add item'},
+    it:{CURRENT_BUTTON: 'Aggiungi elemento'}
+}
+
+const RemoveList = {
+    en:{CURRENT_BUTTON: 'Delete item'},
+    it:{CURRENT_BUTTON: 'Resetta Lista'}
+}
+
 const TodoList = (props) => {
 
     //destructuring per usare useState
@@ -42,12 +52,12 @@ const TodoList = (props) => {
                 {language => {
                     return(<>
 
-                        <h3>Todo List</h3>
+                        <h3>{String[language].CURRENT_LIST}</h3>
                         <input onChange={(event) => setName(event.target.value)} ref={clearInput}/>
 
-                        <button type="button" onClick={setNameHandler}>Add Item</button>
+                        <button type="button" onClick={setNameHandler}>{StringButton[language].CURRENT_BUTTON}</button>
 
-                        <button type="button" onClick={setResetHandler}>Reset List</button>
+                        <button type="button" onClick={setResetHandler}>{RemoveList[language].CURRENT_BUTTON}</button>
 
                         <ul ref={clearList} onChange={(event) => setReset(event.target.value)}>
 
