@@ -1,9 +1,9 @@
-import Form from './components/Form';
+import FormLogin from './components/FormLogin';
 import './App.css';
 
 function App() {
   return <div>
-          <Form/>
+          <FormLogin/>
         </div>
 }
 
