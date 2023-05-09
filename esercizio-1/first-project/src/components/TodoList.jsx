@@ -1,6 +1,11 @@
 import { useState, useRef } from "react";
 import LanguageContext from "./LanguageContext";
 
+const Language = {
+    english: {CURRENT_LANGUAGE: 'English'},
+    italiano:{CURRENT_LANGUAGE: 'Italiano'}
+}
+
 const String = {
     english:{CURRENT_LIST: 'Todo List'},
     italiano:{CURRENT_LIST: 'Lista di cose da fare'}
@@ -51,6 +56,7 @@ const TodoList = (props) => {
 
                 {language => {
                     return(<>
+                        <h1>{Language[language].CURRENT_LANGUAGE}</h1>
                         <h3>{String[language].CURRENT_LIST}</h3>
                         <input onChange={(event) => setName(event.target.value)} ref={clearInput}/>
 

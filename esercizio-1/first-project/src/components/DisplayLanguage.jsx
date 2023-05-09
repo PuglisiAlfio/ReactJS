@@ -25,7 +25,6 @@ class DisplayLanguage extends React.Component {
                     <option value="italiano">ITALIANO</option>
                 </select>
                 <LanguageContext.Provider value={this.state.language}>
-                    <h1>{this.state.language}</h1>
                     <TodoList name = {arrNames}/>
                 </LanguageContext.Provider>
                 </>
