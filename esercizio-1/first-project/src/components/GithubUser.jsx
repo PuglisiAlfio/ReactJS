@@ -15,7 +15,7 @@ function GithubUser(props) {
 
     return <>
             <div>
-                {data && <a href={data.html_url}>{data.login}</a>}
+                {data && <a href={data.html_url}><h1>{data.login}</h1></a>}
             </div>
         </>
 }
