@@ -8,6 +8,9 @@ function Counter() {
     //a side effect quando il componente è renderizzato per la prima volta
     useEffect(() => {
         console.log(`il counter è montato`)
+        return () => {
+            console.log('il componente è smontato')
+        }
     }, [])
 
 
