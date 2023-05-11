@@ -1,9 +1,9 @@
-import Welcome from './components/Welcome';
+import Form from './components/Form';
 import './App.css';
 
 function App() {
   return <div>
-          <Welcome name = "Alfio"/>
+          <Form />
         </div>
 }
 
