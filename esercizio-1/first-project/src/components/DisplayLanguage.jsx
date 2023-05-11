@@ -1,35 +1,29 @@
-import React from "react"
+import React from "react";
+import LanguageContext  from "./LanguageContext"
 
-import LanguageContext from "./LanguageContext"
-import TodoList from "./TodoList"
-
-const arrNames = ['Alfio', 'Andrea', 'Manfredi'];
+const Strings = {
+  en:{CURRENT_LANGUAGE: "Selected language: English"},
+  it:{CURRENT_LANGUAGE: "Lingua Selezionata: Italiano"}
+}
 
 class DisplayLanguage extends React.Component {
-
-    state = {
-        language: 'italiano',
-    }
-
-    handleLanguageChange= (event) => {
-        this.setState({
-            language: event.target.value
-        }) 
-    }
-
-    render() {
+    render(){
         return <>
-                <h3>My Display Language</h3>
-                <select value={this.state.language} onChange={this.handleLanguageChange}>
-                    <option value="english">ENGLISH</option>
-                    <option value="italiano">ITALIANO</option>
-                </select>
-                <LanguageContext.Provider value={this.state.language}>
-                    <TodoList name = {arrNames}/>
-                </LanguageContext.Provider>
-                </>
-        }
-
+          <LanguageContext.Consumer>
+            {language => {
+                return<>
+                        <div>
+                            <h1>
+                            {Strings[language].CURRENT_LANGUAGE}
+                            </h1>
+                        </div>
+                     </>
+                
+              }
+            }
+          </LanguageContext.Consumer>
+          </>
+      }
 }
 
 export default DisplayLanguage
