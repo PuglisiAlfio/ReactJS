@@ -1,9 +1,9 @@
-import Welcome from './components/Welcome';
+import GithubUserList from './components/GithubUserList';
 import './App.css';
 
 function App() {
   return <div>
-          <Welcome name = "Alfio"/>
+          <GithubUserList />
         </div>
 }
 
