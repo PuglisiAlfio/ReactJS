@@ -5,43 +5,26 @@ function Counter() {
 
     const [counter, setCount] = useState(0);
 
-    //a side effect quando il componente è renderizzato per la prima volta
     useEffect(() => {
         console.log(`il counter è montato`)
         return () => {
-            console.log('il componente è smontato')
+            console.log('il counter è smontato')
         }
     }, [])
 
+    useEffect(() =>{
+      let intervallo = setInterval(function () {setCount(counter + 1)},1000)
 
-    //a side effect ogni volta che il componente viene re-renderizzato
-    useEffect(() => {
-        console.log(`il counter è ${counter}`);
-        //funzione OPZIONALE, dopo ogni re-rendering con valori cambiati, questa funzione (cleanup function) verrà eseguita con il vecchio valore
-        return () => {
-            console.log(`il counter era ${counter}`);
-        }
+      return () => {
+        clearInterval(intervallo, 1000)
+      }
     }, [counter])
 
-    const increase = () => {
-        setCount(count => count + 1)
-    }
-
-    const decrease = () => {
-        if (counter > 0) {
-            setCount(count => count - 1);
-        }
-      };
-
-    
-
-
-
-    return <>
-            <h2>Count: {counter}</h2>
-            <button onClick={increase}>Incrementa</button>
-            <button onClick={decrease}>Decrementa</button>
-            </>
+    return (
+        <div>
+          <h1>{counter}</h1>
+        </div>
+      );
 }
 
 export default Counter

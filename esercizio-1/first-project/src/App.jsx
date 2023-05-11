@@ -14,7 +14,7 @@ function App() {
 
   return <div>
           <button onClick={handleShowCounter}>Elimina/Aggiungi Componente</button>
-          {showCounter && <Counter />}
+          {showCounter && <Counter showCounter={showCounter}/>}
         </div>
 }
 
