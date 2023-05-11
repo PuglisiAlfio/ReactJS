@@ -1,9 +1,9 @@
 import { useEffect } from "react"
 
 
-const SideEffect = (props) => {
+const ClickCounter = (props) => {
 
-    useEffect(() => props.change, [props.counter])
+    useEffect(() => props.change, [props.counter,props.change])
 
     return <>
             <h2>Count: {props.counter}</h2>
@@ -12,4 +12,4 @@ const SideEffect = (props) => {
             </>
 }
 
-export default SideEffect
+export default ClickCounter

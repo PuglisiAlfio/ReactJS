@@ -1,14 +1,10 @@
 import { useState } from "react"
-import SideEffect from "./SideEffect"
+import ClickCounter from "./SideEffect";
 
 
 function Counter() {
 
     const [counter, setCount] = useState(0);
-
-   function onCounterChange() {
-    console.log(`Il contatore è ${counter}`)
-    }
 
     const increase = () => {
         setCount(count => count + 1)
@@ -20,7 +16,11 @@ function Counter() {
         }
       };
 
-        return  <SideEffect increase={increase} decrease={decrease} counter={counter} change={onCounterChange({counter})}/>
+   function onCounterChange() {
+    console.log(`Il contatore è ${counter}`)
+    }
+
+        return  <ClickCounter increase={increase} decrease={decrease} counter={counter} change={onCounterChange({counter})}/>
     
 }
 
