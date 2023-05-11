@@ -18,8 +18,7 @@ class DisplayLanguage extends React.Component {
                             </h1>
                         </div>
                      </>
-                
-              }
+                }
             }
           </LanguageContext.Consumer>
           </>
