@@ -12,7 +12,7 @@ function GithubUserList() {
 
     return <>
             <input type="text" onChange={(event) => setName(event.target.value)}/>
-            <button onClick={handleSetList}>Search</button>
+            <button onClick={handleSetList}>Add</button>
             <GithubUser username = {name}/>
 
             <ul>
