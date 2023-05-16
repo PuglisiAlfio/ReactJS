@@ -13,11 +13,9 @@ function GithubUserList() {
     return <>
             <input type="text" onChange={(event) => setName(event.target.value)}/>
             <button onClick={handleSetList}>Add</button>
-            <GithubUser username = {name}/>
-
             <ul>
-                {item.map((element, index) => {
-                    return <li key={index}>{element}</li>
+                {item.map(( index) => {
+                    return <li key={index}><GithubUser username={name}/></li>
                     })
                 }
             </ul>
