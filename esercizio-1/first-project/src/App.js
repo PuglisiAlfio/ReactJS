@@ -1,9 +1,9 @@
-import Welcome from './components/Welcome';
+import FilteredList from './components/FilteredList';
 import './App.css';
 
 function App() {
   return <div>
-          <Welcome name = "Alfio"/>
+          <FilteredList/>
         </div>
 }
 
