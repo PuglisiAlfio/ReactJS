@@ -1,9 +1,12 @@
-import Welcome from './components/Welcome';
+import DisplayLanguage from "./components/DisplayLanguage";
+import LanguageContext from "./components/LanguageContext";
 import './App.css';
 
 function App() {
   return <div>
-          <Welcome name = "Alfio"/>
+          <LanguageContext.Provider>
+            <DisplayLanguage />
+          </LanguageContext.Provider>
         </div>
 }
 
