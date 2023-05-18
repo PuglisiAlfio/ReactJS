@@ -1,10 +1,8 @@
-import Welcome from './components/Welcome';
-import './App.css';
+import Car from "./components/Car"
 
 function App() {
-  return <div>
-          <Welcome name = "Alfio"/>
-        </div>
+
+return <Car/>;
 }
 
 export default App;
