@@ -1,33 +1,25 @@
-import { useState } from "react";
+import { useContext } from "react";
+import LanguageContext from "./LanguageContext"
+
 
 function DisplayLanguage () {
- 
-  const [language, setLanguage] = useState ("it")
-
-function handleLanguageChange (event){
-  setLanguage(event.target.value) 
-};
+  const language = useContext(LanguageContext)
 
   const Language = {
-      en: {
-          "HELLO": "Hello!",
-          "CURRENT": "Selected language: "
-        },
-
-        it : {
-            "HELLO": "Ciao!",
-            "CURRENT" : "Lingua selezionata: "
-        }
+    it : {
+      "HELLO": "Ciao!",
+      "CURRENT": "La lingua selezionata è:"
+    },
+    en: {
+      "HELLO": "Hello!",
+      "CURRENT": "Selected language is:"
+    }
   }
 
   return (
   <>
-  <b>{Language[language]["CURRENT"]}</b>
-  <select value={language} onChange={handleLanguageChange}>
-    <option value="en">ENGLISH</option>
-    <option value="it">ITALIANO</option>
-  </select>
   <h3>{Language[language]["HELLO"]}</h3>
+  <p>{Language[language]["CURRENT"]}</p>
   </>
   )
 }
