@@ -1,5 +1,4 @@
 import Counter from './components/Counter';
-import './App.css';
 import { Route, Routes, Link } from 'react-router-dom';
 
 function App() {
