@@ -1,10 +1,11 @@
-import Welcome from './components/Welcome';
-import './App.css';
+import GithubUser from "./components/GithubUser"
+function App(){
 
-function App() {
-  return <div>
-          <Welcome name = "Alfio"/>
+    return(
+        <div>
+        <GithubUser username={"PuglisiAlfio"}/>
         </div>
+    )
 }
 
 export default App;
