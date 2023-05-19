@@ -1,53 +1,44 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
+import { useRef } from "react";
 
+function TodoList(props) {
+  const input = useRef(null);
+  const [name, setName] = useState("");
+  const [items, setItems] = useState([
+    "Ciao",
+    "Hello",
+    "Salut",
+  ]);
 
-const TodoList = (props) => {
+  const handleAdd = () => {
+    setItems([...items, name]);
+    setName("");
+    input.current.value = "";
+  };
 
-    //destructuring per usare useState
-    const [name, setName] = useState("");
-    const [item, setItem] = useState(props.name);
-    const [reset, setReset] = useState('')
-    let clearInput = useRef('');
-    let clearList = useRef('');
-    //let clearItem = useRef('');
-   
-    //funzione per manipolare l'input
-    const setNameHandler = () => {
-        setItem([...item, name]);
-        //con l'useRef, una volta cliccato il bottone, aggiorniamo la text area dell'input con un valore vuoto ('' o null);
-        clearInput.current.value = null //oppure ''
-      };
+  const removeAll = () => {
+    setItems([]);
+  };
 
-      //funzione per resettare la lista
-      const setResetHandler = () => {
-        setItem([...reset])
-        clearList.current = []
+  function removeTodo(index) {
+    const newArr = [...items];
+    newArr.splice(index, 1);
+    setItems(newArr);
+  }
+
+  return (
+    <>
+      <input onChange={(e) => setName(e.target.value)} ref={input} />
+
+      <button onClick={handleAdd}>add</button>
+      <button onClick={removeAll}>remove all</button>
+      <ul>
+      {
+        props.renderArr(items, removeTodo)
       }
-      //rimuovere elemento corrispondente
-      const setRemoveItemHandler = (id) => {
-        const updateItems = [...item];
-        updateItems.splice(id, 1);
-        setItem(updateItems)
-      }
-    
-    return(
-        <>
-            <h3>Todo List</h3>
-            <input onChange={(event) => setName(event.target.value)} ref={clearInput}/>
-
-            <button type="button" onClick={setNameHandler}>Add Item</button>
-
-            <button type="button" onClick={setResetHandler}>Reset List</button>
-
-            <ul ref={clearList} onChange={(event) => setReset(event.target.value)}>
-
-                {item.map((item, id) => <>
-                                            <li key={id}>{item}</li>
-                                            <button onClick={setRemoveItemHandler}>Rimuovi item</button>
-                                            </>)}
-            </ul>
-        </>
-    )
+      </ul>
+    </>
+  );
 }
 
 export default TodoList

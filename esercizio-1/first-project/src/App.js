@@ -1,15 +1,23 @@
-import TodoList from './components/TodoList';
-import './App.css';
+import React from "react";
+import TodoList from "./components/TodoList"
 
-function App() {
+export default class App extends React.Component {
+  renderArr = (arr, remove) => {
+    return arr.map((item, index) => {
+      return(
+        <>
+            <li index={index}>{item}</li>
+          <button onClick={() => remove(index)}>remove this</button>
+        </>
+      )
+    })
+  }
 
-  const arrNames = ['Alfio', 'Andrea', 'Manfredi'];
-
-  return <div>
-          <TodoList name = {arrNames}>
-
-            </TodoList>
-        </div>
+  render(){
+    return (
+      <>
+      <TodoList renderArr = {this.renderArr} />
+      </>
+    )
+  }
 }
-
-export default App;
