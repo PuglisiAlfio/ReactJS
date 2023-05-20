@@ -12,7 +12,9 @@ function Form() {
             password: event.target.password.value
         }
         setUserData([...userData,userArr]);
-    }
+        event.target.username.value = '';
+        event.target.password.value = ''
+     }
 
     const handleResetData = () => {
         setUserData([])
