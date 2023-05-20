@@ -1,7 +1,10 @@
-import { useGithubUser } from "./useGithubUser";
+import {useGithubUser} from "./useGithubUser"
 
-function GithubUser({username}){
-    const {data} = useGithubUser(username)
+function GithubUser(props){
+    
+    const {data} = useGithubUser(props.username)
+
+    console.log(data)
     
     return <div>
         {data && ( 
