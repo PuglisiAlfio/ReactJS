@@ -1,41 +1,38 @@
 import { useState } from "react"
 import DisplayInfo from "./DisplayInfo";
+import Fetcher from "./Fetcher";
 
-function Form(){
+function Form() {
+    const [userData, setUserData] = useState([]);
 
-    const [userData, setData] = useState([])
-
-    const onSubmitHandle = (e) => {
-        e.preventDefault();
+    const handleSubmitData = (event) => {
+        event.preventDefault();
         const userArr = {
-                username: e.target.username.value,
-                password: e.target.password.value
-            };
-         setData([...userData, userArr]);
-
-         e.target.username.value = '';
-         e.target.password.value = '';  
+            username: event.target.username.value,
+            password: event.target.password.value
+        }
+        setUserData([...userData,userArr]);
     }
 
-    const onResetHandle = () => {
-        setData([])
+    const handleResetData = () => {
+        setUserData([])
     }
 
-    return (
-        <>
-            <form onSubmit={onSubmitHandle}>
+
+    return <>
+            <form onSubmit={handleSubmitData}>
                 <label>Name:</label>
-                <input type="text" name="username"/>
+                <input type="text" name="username" />
                 <br />
                 <label>Password:</label>
-                <input type="password" name="password"/>
+                <input type="password" name="password" />
                 <br />
-                <button type="submit">Login</button>
-                <button onClick={onResetHandle}>Reset</button>
+                <button type="submit">Load</button>
+                <button onClick={handleResetData}>Reset</button>
             </form>
             <DisplayInfo userArr={userData}/>
-        </>
-    )
-}
+            <Fetcher/>
+            </>
+} 
 
 export default Form

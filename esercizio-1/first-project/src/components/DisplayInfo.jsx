@@ -1,4 +1,6 @@
+
 function DisplayInfo(props) {
+    
     return<>
             <h2>Display info:</h2>
             {props.userArr.map(e => {
