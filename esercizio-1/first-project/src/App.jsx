@@ -11,7 +11,7 @@ function App() {
           <br />
           <Link to='/user/yangus98'>Go to User Giuseppe Bianconi</Link>
           <br />
-          <Link to='/user/PuglisiAlfio'>Go to User PuglisiAlfio</Link>
+          <Link to='/user/gabrimarch3'>Go to User GabriMarche</Link>
         </div>
 }
 
