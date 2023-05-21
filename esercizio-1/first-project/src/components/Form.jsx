@@ -24,7 +24,7 @@ function Form() {
     return <>
             <form onSubmit={handleSubmitData}>
                 <label>Name:</label>
-                <input type="text" name="username" />
+                <input type="text" name="username"/>
                 <br />
                 <label>Password:</label>
                 <input type="password" name="password" />
@@ -33,7 +33,7 @@ function Form() {
                 <button onClick={handleResetData}>Reset</button>
             </form>
             <DisplayInfo userArr={userData}/>
-            <Fetcher id={'4'}/>
+            <Fetcher id={'5'}/>
             </>
 } 
 

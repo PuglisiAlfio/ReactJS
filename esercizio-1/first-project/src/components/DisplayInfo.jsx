@@ -6,8 +6,8 @@ function DisplayInfo(props) {
             {props.userArr.map(e => {
                 return (
                     <>
-                        <h4>{e.username}</h4>
-                        <p>{e.password}</p>
+                        {e.username && <h4>name: {e.username}</h4>}
+                        {e.password && <p>password: {e.password}</p>}
                     </>
                 )
             })}
