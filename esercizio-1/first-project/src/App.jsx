@@ -1,9 +1,8 @@
-import Form from './components/Form';
-
+import Fetcher from "./components/Fetcher";
 
 function App() {
   return <div>
-          <Form/>
+         <Fetcher/>
         </div>
 }
 

@@ -1,24 +1,30 @@
 import { useEffect, useState } from "react"
+import Data from "./Data"
 
-const Fetcher = (props) =>{
+function Fetcher() {
 
-    const [data, setData] = useState('')
-    
-    useEffect(() =>{
+    const [data, setData] = useState([])
+
+    useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch(`https://swapi.dev/api/people/${props.id}/`)
-            const newData = await response.json()
-            setData(newData);
-            console.log(newData)
+            const response = await fetch('https://jsonplaceholder.typicode.com/todos')
+            const newData = await response.json();
+            const filteredData = newData.filter((item, index) => index < 20)
+            setData(filteredData);
         }
-
         fetchData()
-    } ,[props.id]);
+    },[])
 
-    return <>
-            <h3>Fetch request:</h3>
-            <p>{data.name} - {data.height}</p>
-            </>
+    
+
+    return( 
+            <div>
+                {data.map((item) => {
+                   return <Data title={item.title} completed={item.completed.toString()}/>  
+                })}
+            </div>
+    )
+            
 }
 
 export default Fetcher
